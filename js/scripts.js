@@ -9,31 +9,31 @@ $(function() {
 
 function NoteLogic (note) {
     this.note = note;
-    this.hSeg = "<div class='note resultsnote'>" + this.note + "<img src='img/" + this.note + ".png'></div>";
+    this.hSeg = "<div class='note resultsnote'><img src='img/" + this.note + ".gif'></div>";
     return this.hSeg;
 }
 
-$('#noteA').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('A'));
+$('#note1').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('1'));
 });
-$('#noteB').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('B'));
+$('#note2').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('2'));
 });
-$('#noteC').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('C'));
+$('#note3').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('3'));
 });
-$('#noteD').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('D'));
+$('#note4').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('4'));
 });
-$('#noteE').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('E'));
+$('#note5').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('5'));
 });
-$('#noteF').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('F'));
+$('#note6').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('6'));
 });
-$('#noteG').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('G'));
+$('#note7').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('7'));
 });
-$('#noteH').click(function(){
-    $( "#sheetmusic" ).append(NoteLogic('H'));
+$('#note8').click(function(){
+    $( "#sheetmusic" ).append(NoteLogic('8'));
 });
