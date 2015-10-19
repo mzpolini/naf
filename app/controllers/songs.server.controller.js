@@ -16,15 +16,15 @@ var getErrorMessage = function(err) {
 	}
 };
 
-// Create a new controller method that creates new articles
+// Create a new controller method that creates new songs
 exports.create = function(req, res) {
 	// Create a new article object
 	var song = new Song(req.body);
 
-	// Set the article's 'creator' property
+	// Set the song's 'creator' property
 	song.creator = req.user;
 
-	// Try saving the article
+	// Try saving the song
 	song.save(function(err) {
 		if (err) {
 			// If an error occurs send the error message
@@ -32,15 +32,15 @@ exports.create = function(req, res) {
 				message: getErrorMessage(err)
 			});
 		} else {
-			// Send a JSON representation of the article
+			// Send a JSON representation of the song
 			res.json(song);
 		}
 	});
 };
 
-// Create a new controller method that retrieves a list of articles
+// Create a new controller method that retrieves a list of songs
 exports.list = function(req, res) {
-	// Use the model 'find' method to get a list of articles
+	// Use the model 'find' method to get a list of songs
 	Song.find().sort('-created').populate('creator', 'firstName lastName fullName').exec(function(err, songs) {
 		if (err) {
 			// If an error occurs send the error message
@@ -54,21 +54,21 @@ exports.list = function(req, res) {
 	});
 };
 
-// Create a new controller method that returns an existing article
+// Create a new controller method that returns an existing song
 exports.read = function(req, res) {
 	res.json(req.song);
 };
 
-// Create a new controller method that updates an existing article
+// Create a new controller method that updates an existing song
 exports.update = function(req, res) {
-	// Get the article from the 'request' object
+	// Get the song from the 'request' object
 	var song = req.song;
 
 	// Update the article fields
 	song.title = req.body.title;
 	song.content = req.body.content;
 
-	// Try saving the updated article
+	// Try saving the updated song
 	song.save(function(err) {
 		if (err) {
 			// If an error occurs send the error message
@@ -76,18 +76,18 @@ exports.update = function(req, res) {
 				message: getErrorMessage(err)
 			});
 		} else {
-			// Send a JSON representation of the article
+			// Send a JSON representation of the song
 			res.json(song);
 		}
 	});
 };
 
-// Create a new controller method that delete an existing article
+// Create a new controller method that delete an existing song
 exports.delete = function(req, res) {
 	// Get the article from the 'request' object
 	var song = req.song;
 
-	// Use the model 'remove' method to delete the article
+	// Use the model 'remove' method to delete the song
 	song.remove(function(err) {
 		if (err) {
 			// If an error occurs send the error message
@@ -95,15 +95,15 @@ exports.delete = function(req, res) {
 				message: getErrorMessage(err)
 			});
 		} else {
-			// Send a JSON representation of the article
+			// Send a JSON representation of the song
 			res.json(song);
 		}
 	});
 };
 
-// Create a new controller middleware that retrieves a single existing article
+// Create a new controller middleware that retrieves a single existing song
 exports.songByID = function(req, res, next, id) {
-	// Use the model 'findById' method to find a single article
+	// Use the model 'findById' method to find a single song
 	Song.findById(id).populate('creator', 'firstName lastName fullName').exec(function(err, song) {
 		if (err) return next(err);
 		if (!song) return next(new Error('Failed to load song ' + id));
