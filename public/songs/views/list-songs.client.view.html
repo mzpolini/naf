@@ -1,0 +1,19 @@
+<!-- The list articles view -->
+<section data-ng-controller="SongsController" data-ng-init="find()">
+	<h1>Songs</h1>
+	<ul>
+		<!-- The list of article -->
+		<li data-ng-repeat="song in songs">
+			<a data-ng-href="#!/songs/{{song._id}}" data-ng-bind="song.title"></a>
+			<br>
+			<small data-ng-bind="song.created | date:'medium'"></small>
+			<small>/</small>
+			<small data-ng-bind="song.creator.fullName"></small>
+			<p data-ng-bind="song.content"></p>
+		</li>
+	</ul>
+	<!-- If there are no articles in the list, suggest the user's create a new article -->
+	<div data-ng-hide="!song || songs.length">
+		No songs yet, why don't you <a href="/#!/songs/create">create one</a>?
+	</div>
+</section>
