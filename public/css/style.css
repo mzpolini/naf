@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'NAF6hole';
+  /*src: url('webfont.eot'); /* IE9 Compat Modes */*/
+  src: url('../fonts/NAFTracks_Sixhole.ttf')  format('truetype');
+}
+.note {
+    height: 100px;
+    width: 20px;
+    float: left;
+    padding: 10px;
+}
+
+.ttfHide {
+  display:none;
+}
+
+#notebin {
+font-family: 'NAF6hole', Fallback, sans-serif;
+}
+
+#sheetmusic {
+    clear:both;
+    width: 650px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+#results {
+    clear:both;
+    width: 650px;
+    height: 200px;
+    border: 1px solid black;
+}
