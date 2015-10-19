@@ -9,6 +9,11 @@
     float: left;
     padding: 10px;
 }
+
+.ttfHide {
+  display:none;
+}
+
 #notebin {
 font-family: 'NAF6hole', Fallback, sans-serif;
 }

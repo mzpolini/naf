@@ -9,7 +9,7 @@ $(function() {
 
 function NoteLogic (note) {
     this.note = note;
-    this.hSeg = "<div class='note resultsnote'><img src='img/" + this.note + ".gif'></div>";
+    this.hSeg = "<div class='note resultsnote'><div class='ttfHide'>" + this.note + "</div><img src='img/" + this.note + ".gif'></div>";
     return this.hSeg;
 }
 
