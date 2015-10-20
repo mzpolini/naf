@@ -1,11 +1,19 @@
 // Invoke 'strict' JavaScript mode
 'use strict';
 
-// Create the 'articles' controller
+// Create the 'songs' controller
 angular.module('songs').controller('SongsController', ['$scope', '$routeParams', '$location', 'Authentication', 'Songs',
     function($scope, $routeParams, $location, Authentication, Songs) {
     	// Expose the Authentication service
         $scope.authentication = Authentication;
+
+        //Logic for adding notes to staging area while creating Songs
+        function MainCtrl() {
+            $scope.stuffs = [];
+            $scope.submit = function() {
+               $scope.stuffs.push({title: 'Hello', content: 'world'});
+            }
+        }
 
         // Create a new controller method for creating new articles
         $scope.create = function() {
