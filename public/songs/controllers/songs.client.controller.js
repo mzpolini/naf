@@ -8,14 +8,14 @@ angular.module('songs').controller('SongsController', ['$scope', '$routeParams',
         $scope.authentication = Authentication;
 
         //Logic for adding notes to staging area while creating Songs
-        function MainCtrl() {
-            $scope.stuffs = [];
-            $scope.submit = function() {
-               $scope.stuffs.push({title: 'Hello', content: 'world'});
-            }
-        }
+        // function MainCtrl() {
+        //     $scope.stuffs = [];
+        //     $scope.submit = function() {
+        //        $scope.stuffs.push({title: 'Hello', content: 'world'});
+        //     }
+        // }
 
-        // Create a new controller method for creating new articles
+        // Create a new controller method for creating new songs
         $scope.create = function() {
         	// Use the form fields to create a new article $resource object
             var song = new Songs({
@@ -39,7 +39,7 @@ angular.module('songs').controller('SongsController', ['$scope', '$routeParams',
             $scope.songs = Songs.query();
         };
 
-        // Create a new controller method for retrieving a single article
+        // Create a new controller method for retrieving a single song
         $scope.findOne = function() {
         	// Use the article 'get' method to send an appropriate GET request
             $scope.song = Songs.get({

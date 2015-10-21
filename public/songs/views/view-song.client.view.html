@@ -1,7 +1,7 @@
 <!-- The song view -->
 <section data-ng-controller="SongsController" data-ng-init="findOne()">
     <h1 data-ng-bind="song.title"></h1>
-    <!-- Show the editing buttons to the article creator -->
+    <!-- Show the editing buttons to the song creator -->
     <div data-ng-show="authentication.user._id == song.creator._id">
         <a href="/#!/songs/{{song._id}}/edit">edit</a>
         <a href="#" data-ng-click="delete();">delete</a>
@@ -12,5 +12,6 @@
         <em>by</em>
         <em data-ng-bind="song.creator.fullName"></em>
     </small>
-    <p data-ng-bind="song.content"></p>
+    <p data-ng-bind="song.content">
+    </p>
 </section>

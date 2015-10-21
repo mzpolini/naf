@@ -12,7 +12,7 @@ module.exports = function(app) {
 	   .get(songs.list)
 	   .post(users.requiresLogin, songs.create);
 
-	// Set up the 'articles' parameterized routes
+	// Set up the 'songs' parameterized routes
 	app.route('/api/songs/:songId')
 	   .get(songs.read)
 	   .put(users.requiresLogin, songs.hasAuthorization, songs.update)
